@@ -4,8 +4,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
 
-
-const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "project-06",
@@ -18,10 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      afterSignOutUrl={"/"}
+      appearance={{
+        elements: {
+          socialButtons: "h-10",
+          input: "h-10",
+          formButtonPrimary:
+            "inline-flex h-10 items-center justify-center rounded-md bg-neutral-950 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95",
+        },
+      }}
+    >
       <html lang="en">
-        <body className={`${poppins.className} antialiased`}>
-          {children}</body>
+        <body className={`${poppins.className} antialiased`}>{children}</body>
       </html>
     </ClerkProvider>
   );

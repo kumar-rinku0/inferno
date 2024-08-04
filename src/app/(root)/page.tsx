@@ -1,5 +1,3 @@
-import { GooeyMenu } from "@/components/ui/gooey-menu";
-
 
 const HomePage = () => {
   return (
@@ -8,6 +6,5 @@ const HomePage = () => {
     </main>
   );
 }
-
 export default HomePage;
 
