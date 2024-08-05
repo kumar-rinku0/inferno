@@ -5,6 +5,6 @@
 
 @layer base {
   body {
-    @apply bg-accent text-accent-foreground dark:bg-primary dark:text-accent
+    @apply bg-neutral-50 text-accent-foreground dark:bg-neutral-950 dark:text-accent
   }
 }

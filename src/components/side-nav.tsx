@@ -42,7 +42,7 @@ export default function SideNav() {
       <div
         className={`${
           isSidebarExpanded ? "w-[200px]" : "w-[68px]"
-        } border-r border-r-neutral-200 dark:border-r-neutral-800 transition-all duration-300 ease-in-out transform hidden sm:flex h-full bg-neutral-50 dark:bg-accent-foreground`}
+        } border-r border-r-neutral-200 dark:border-r-neutral-800 transition-all duration-300 ease-in-out transform hidden sm:flex h-full bg-neutral-50 dark:bg-primary/50`}
       >
         <aside className="flex h-full flex-col w-full break-words px-4 overflow-x-hidden columns-1">
           {/* Top */}

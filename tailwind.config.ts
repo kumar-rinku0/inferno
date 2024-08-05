@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         primary: "#1c1c22",
+        secondary: "#020617",
         accent: {
           DEFAULT: "#f1f5f9",
           foreground: "#171717",
