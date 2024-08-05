@@ -1,116 +1,36 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
+  prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "15px",
-    },
-    screens: {
-      'sm': "640px",
-      'md': "768px",
-      'lg': "1024px",
-      'xl': "1280px",
-      '2xl': "1536px",
-    },
-    colors: {
-      primary: "#1c1c22",
-      accent: {
-        DEFAULT: "#f1f5f9",
-        foreground: "#020617",
-      },
-      white: "#ffffff",
-      transparent: "transparent",
-      current: "currentColor",
-      tahiti: {
-        100: "#cffafe",
-        200: "#a5f3fc",
-        300: "#67e8f9",
-        400: "#22d3ee",
-        500: "#06b6d4",
-        600: "#0891b2",
-        700: "#0e7490",
-        800: "#155e75",
-        900: "#164e63",
-      },
-      neutral: {
-        50: "#fafafa",
-        100: "#f5f5f5",
-        200: "#e5e5e5",
-        300: "#d4d4d4",
-        400: "#a3a3a3",
-        500: "#737373",
-        600: "#525252",
-        700: "#404040",
-        800: "#262626",
-        900: "#171717",
-        950: "#0a0a0a",
-      },
-      indigo: {
-        100: "",
-        200: "",
-        300: "",
-        400: "#818cf8",
-        500: "",
-        600: "",
-        700: "",
-        800: "",
-        900: "",
-        950: "",
-      },
-      gray: {
-        100: "",
-        200: "",
-        300: "",
-        400: "#9ca3af",
-        500: "#6b7280",
-        600: "",
-        700: "",
-        800: "#1f2937",
-        900: "",
-      },
-      red: {
-        100: "",
-        200: "",
-        300: "",
-        400: "",
-        500: "#ef4444",
-        600: "",
-        700: "",
-        800: "",
-        900: "",
-      },
-      sky: {
-        100: "",
-        200: "#bae6fd",
-        300: "#7dd3fc",
-        400: "",
-        500: "",
-        600: "",
-        700: "#0369a1",
-        800: "",
-        900: "",
-      },
-      yellow: {
-        100: "",
-        200: "",
-        300: "",
-        400: "",
-        500: "#eab308",
-        600: "",
-        700: "",
-        800: "",
-        900: "",
-        950: "",
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#1c1c22",
+        accent: {
+          DEFAULT: "#f1f5f9",
+          foreground: "#171717",
+        },
+        white: "#ffffff",
+        transparent: "transparent",
+        current: "currentColor",
+      }
+    }
   },
-  plugins: [],
-};
-export default config;
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config

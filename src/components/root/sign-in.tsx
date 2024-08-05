@@ -9,7 +9,7 @@ import {
 import { FaSpinner } from "react-icons/fa";
 
 const SignIn = () => {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isLoaded } = useUser();
 
   if (!isLoaded) {
     return (

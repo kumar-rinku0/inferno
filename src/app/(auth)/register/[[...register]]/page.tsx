@@ -5,6 +5,7 @@ export default function Page() {
     <SignUp
       forceRedirectUrl={"/dashboard"}
       fallbackRedirectUrl={"/"}
+      afterSignOutUrl={"/"}
     />
   );
 }

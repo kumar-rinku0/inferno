@@ -42,7 +42,7 @@ export default function SideNav() {
       <div
         className={`${
           isSidebarExpanded ? "w-[200px]" : "w-[68px]"
-        } border-r border-r-neutral-200 transition-all duration-300 ease-in-out transform hidden sm:flex h-full bg-white dark:bg-accent-foreground`}
+        } border-r border-r-neutral-200 dark:border-r-neutral-800 transition-all duration-300 ease-in-out transform hidden sm:flex h-full bg-neutral-50 dark:bg-accent-foreground`}
       >
         <aside className="flex h-full flex-col w-full break-words px-4 overflow-x-hidden columns-1">
           {/* Top */}
@@ -60,7 +60,7 @@ export default function SideNav() {
                         <span
                           className={`${
                             isSidebarExpanded ? "block" : "hidden"
-                          } uppercase text-sm text-neutral-400 font-semibold`}
+                          } uppercase text-sm text-neutral-400 dark:text-neutral-600 font-semibold`}
                         >
                           {navItem.groupName}
                         </span>
@@ -116,7 +116,7 @@ export default function SideNav() {
         <div className="mt-[calc(calc(90vh)-40px)] relative">
           <button
             type="button"
-            className="absolute bottom-32 right-[-12px] flex h-6 w-6 items-center justify-center border border-neutral-300 rounded-full bg-accent shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
+            className="absolute bottom-32 right-[-12px] flex h-6 w-6 items-center justify-center border border-neutral-300 dark:border-neutral-700 rounded-full bg-accent dark:bg-primary shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
             onClick={toggleSidebar}
           >
             {isSidebarExpanded ? (

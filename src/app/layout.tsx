@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import "./globals.css";
+import ContextProvider from "@/components/context-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-      afterSignOutUrl={"/"}
       appearance={{
         elements: {
           socialButtons: "h-10",
@@ -31,7 +31,8 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
+        <head />
         <body className={`${poppins.className} antialiased`}>{children}</body>
       </html>
     </ClerkProvider>

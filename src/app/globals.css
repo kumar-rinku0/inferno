@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   body {
-    @apply bg-accent text-accent-foreground;
+    @apply bg-accent text-accent-foreground dark:bg-primary dark:text-accent
   }
 }
