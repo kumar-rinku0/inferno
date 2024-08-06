@@ -1,4 +1,5 @@
 import ContextProvider from "@/components/context-provider";
+import Footer from "@/components/root/footer";
 import RootNav from "@/components/root/root-nav";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -9,6 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)] dark:-z[-2] dark:bg-neutral-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
             <RootNav />
             <main>{children}</main>
+            <Footer />
           </div>
         </div>
       </ContextProvider>

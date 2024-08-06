@@ -1,7 +1,8 @@
-import { RedirectToUserProfile, UserButton } from "@clerk/nextjs";
+
 import Link from "next/link";
 import { FaFireFlameCurved } from "react-icons/fa6";
-import { ThemeToggle } from "./ui/theme-toggle";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import {UserClerkButton} from "@/components/dashboard/user-clerk-button"
 
 const Header = () => {
   return (
@@ -19,7 +20,7 @@ const Header = () => {
           <ThemeToggle />
         </div>
         <div className="flex justify-center items-center">
-          <UserButton />
+          <UserClerkButton />
         </div>
       </div>
     </header>

@@ -1,23 +1,12 @@
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import AnimatedText from "@/components/root/animated-text";
 export default function Home() {
   return (
-    <div>
-      <ScrollArea className="h-full w-full ">
-          HomePage
-          <div className="w-fit">
-            <ThemeToggle />
-          </div>
-          <div className="text-xl w-32">
-          Jokester began sneaking into the castle in the middle of the night and leaving
-  jokes all over the place: under the king's pillow, in his soup, even in the
-  royal toilet. The king was furious, but he couldn't seem to stop Jokester. And
-  then, one day, the people of the kingdom discovered that the jokes left by
-  Jokester were so funny that they couldn't help but laugh. And once they
-  started laughing, they couldn't stop.
-          </div>
-        <ScrollBar orientation="vertical" />
-      </ScrollArea>
+    <div className="mx-6 p-1 h-[calc(90vh+20px)]">
+      <div className="w-full flex justify-center items-center font-bold p-6">
+      <AnimatedText className="text-5xl text-neutral-500" text="Welcome to InferNo...!!" animation={{hidden:{opacity:0, x:-10}, visible:{opacity:1, x:0,}}} />
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { SkeletonCard } from "@/components/dashboard/skeleton-card";
 import { useUser } from "@clerk/nextjs";
 
 const Dashboard = () => {
@@ -9,10 +10,20 @@ const Dashboard = () => {
   }
   return (
     <>
-   <div>Dashboard</div>
-    <main className="text-base">
+    <div className="h-10 p-2 w-full text-base">
      <div>Hello, {user.firstName} welcome to inferno</div>
-    </main>
+    </div>
+    <div className="w-full flex items-center justify-center">
+    <div className="flex justify-evenly flex-wrap gap-4">
+      <SkeletonCard />
+      <SkeletonCard />
+      <SkeletonCard />
+      <SkeletonCard />
+      <SkeletonCard />
+      <SkeletonCard />
+      <SkeletonCard />
+    </div>
+    </div>
     </>
   );
 };
