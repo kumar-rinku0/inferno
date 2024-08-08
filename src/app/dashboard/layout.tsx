@@ -1,6 +1,6 @@
 import ContextProvider from "@/components/context-provider";
-import SideNav from "@/components/side-nav";
-import Header from "@/components/header";
+import SideNav from "@/components/dashboard/side-nav";
+import Header from "@/components/dashboard/header";
 
 export default function DashboardLayout({
   children,

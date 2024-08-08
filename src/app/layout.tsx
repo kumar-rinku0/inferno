@@ -24,6 +24,9 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         elements: {
+          headerTitle:"text-xl text-neutral-500",
+          headerSubtitle: "",
+          modalCloseButton:"focus:outline-none focus:shadow-none h-10 w-10 text-black rounded-full",
           socialButtonsBlockButton__apple: "h-10",
           socialButtonsBlockButton__google: "h-10",
           input: "h-10",

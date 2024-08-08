@@ -1,14 +1,14 @@
 "use client";
-import { useUser } from "@clerk/nextjs";
+import { SignUpButton, useUser } from "@clerk/nextjs";
 import {
-  SignInButton,
-  SignOutButton,
+
   SignedIn,
   SignedOut,
 } from "@clerk/nextjs";
+import Link from "next/link";
 import { FaSpinner } from "react-icons/fa";
 
-const SignIn = ({className}: {className:string}) => {
+export const SignUp = ({className}: {className:string}) => {
   const { isLoaded } = useUser();
 
   if (!isLoaded) {
@@ -21,21 +21,21 @@ const SignIn = ({className}: {className:string}) => {
   return (
     <>
       <SignedOut>
-        <SignInButton
+        <SignUpButton
           mode="modal"
           fallbackRedirectUrl={"/"}
           forceRedirectUrl={"/dashboard"}
         >
-          <button className={className}>Sign in</button>
-        </SignInButton>
+          <button className={className}>Create account</button>
+        </SignUpButton>
       </SignedOut>
       <SignedIn>
-        <SignOutButton redirectUrl="/">
-          <button className={className}>Sign out</button>
-        </SignOutButton>
+        <Link href={"/dashboard/profile"} className={className}>
+          Profile
+        </Link>
       </SignedIn>
     </>
   );
 };
 
-export default SignIn;
+export default SignUp;

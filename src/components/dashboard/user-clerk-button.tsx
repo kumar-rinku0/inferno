@@ -3,6 +3,7 @@
 import { useUser, UserButton} from "@clerk/nextjs"
 import { FaSpinner } from "react-icons/fa";
 import { Skeleton } from "../ui/skeleton";
+import { Suspense } from "react";
 
 
 export const UserClerkButton = () => {
@@ -17,7 +18,9 @@ export const UserClerkButton = () => {
   }
   return (
     <div className="w-7 h-7 flex justify-center items-center">
-      <UserButton /> 
+      <Suspense fallback={<Skeleton className="w-7 h-7 rounded-full bg-neutral-200 dark:bg-neutral-800" />}>
+        <UserButton /> 
+      </Suspense>
     </div>
   )
 }
