@@ -15,8 +15,8 @@ const RootNav = () => {
             InferNo
           </span>
         </div>
-        <div className="flex md:hidden w-1/12 justify-center items-center">
-          <MobileNav />
+        <div className="flex md:hidden w-1/12 justify-center items-center z-10">
+          <MobileNav side="right" />
         </div>
         <div className="hidden md:flex w-1/2 justify-center gap-x-4 font-semibold">
           <Link href={"/dashboard"} className="hover:text-indigo-400">

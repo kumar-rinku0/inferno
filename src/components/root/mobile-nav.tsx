@@ -1,60 +1,63 @@
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuCheckboxItem,
-  DropdownMenuRadioItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuGroup,
-  DropdownMenuPortal,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuRadioGroup,
-} from "@/components/ui/dropdown-menu";
-import Link from "next/link";
-import { FaBars } from "react-icons/fa";
-import SignIn from "./sign-in";
-import { SignedOut, SignUpButton } from "@clerk/nextjs";
-import SignUp from "./sign-up";
+"use client";
 
-const MobileNav = () => {
+import Link from "next/link";
+import {
+  FaBars,
+  FaDashcube,
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaUser,
+} from "react-icons/fa";
+import SignIn from "./sign-in";
+import { SignedOut, SignUpButton, useUser } from "@clerk/nextjs";
+import SignUp from "./sign-up";
+import { FaBell, FaX } from "react-icons/fa6";
+import { useState } from "react";
+
+type MobileNavProp = {
+  side?: string;
+};
+
+const MobileNav = ({ side }: MobileNavProp) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { isLoaded, isSignedIn } = useUser();
   return (
     <div className="outline-none">
-      <DropdownMenu>
-        <DropdownMenuTrigger className="outline-none">
-          <FaBars className="size-4 outline-none" />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent side="bottom" align="end">
-          <DropdownMenuItem>
-            <Link href={"/dashboard"} className="w-full">
-              Dashboard
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={"#pricing"} className="w-full">
-              Pricing
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={"#subsription"} className="w-full">
-              Subscription
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>
+      <div className="btn">
+        <FaBars onClick={() => setIsOpen(!isOpen)} />
+      </div>
+      <div
+        className={`${
+          isOpen ? `right-0` : `-right-64`
+        } side-bar h-[100vh] w-64 fixed top-0 bg-slate-400 transition-all duration-200 ease-linear`}
+      >
+        <div className="logo flex justify-between items-center px-8 py-6">
+          <Link href={"/"} className="text-lg">
+            inferno
+          </Link>
+          <FaX onClick={() => setIsOpen(!isOpen)} />
+        </div>
+        <div className="menu">
+          <ul className="flex flex-col justify-start gap-4">
+            <li className="flex justify-start items-center gap-2 p-2">
+              <FaDashcube />
+              <Link href="/dashboard">Dashboard</Link>
+            </li>
+            <li className="flex justify-start items-center gap-2 p-2">
+              <FaBell />
+              <Link href="/dashboard/notifications">Notification</Link>
+            </li>
+            <li className="flex justify-center items-center gap-2 p-2">
+              {isSignedIn ? <FaSignOutAlt /> : <FaSignInAlt />}
               <SignIn className="w-full flex justify-start" />
-            </DropdownMenuItem>
-            <DropdownMenuItem>
+            </li>
+            <li className="flex justify-center items-center gap-2 p-2">
+              {isSignedIn ? <FaUser /> : <FaSignOutAlt />}
               <SignUp className="w-full flex justify-start" />
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
