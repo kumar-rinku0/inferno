@@ -24,7 +24,7 @@ const MobileNav = ({ side }: MobileNavProp) => {
   return (
     <div className="outline-none">
       <div className="btn">
-        <FaBars onClick={() => setIsOpen(!isOpen)} />
+        <FaBars size={20} onClick={() => setIsOpen(!isOpen)} />
       </div>
       <div
         className={`${
