@@ -13,11 +13,11 @@ const Header = () => {
     <>
       <header className="flex items-center h-16 px-4 border-b border-b-neutral-200 dark:border-b-neutral-800 shrink-0 md:px-6 justify-between">
         <div className="flex items-center justify-center gap-4">
-          <div>
-            <ThemeToggle />
-          </div>
           <div className="flex justify-center items-center">
             <UserClerkButton />
+          </div>
+          <div>
+            <ThemeToggle />
           </div>
         </div>
         {/* <Link
