@@ -28,7 +28,7 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         elements: {
-          headerTitle: "text-xl text-neutral-500",
+          headerTitle: "text-sm font-semibold text-black",
           headerSubtitle: "",
           modalCloseButton:
             "focus:outline-none focus:shadow-none h-10 w-10 text-black rounded-full",
@@ -37,7 +37,7 @@ export default function RootLayout({
           input: "h-10",
           formButtonPrimary:
             "inline-flex h-10 items-center justify-center rounded-md bg-neutral-950 px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95",
-          logoBox: "h-10",
+          logoBox: "h-12",
         },
         layout: {
           logoImageUrl: `https://cdn.jsdelivr.net/gh/kumar-rinku0/inferno/public/inferno-sign.png`,
