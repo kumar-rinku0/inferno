@@ -65,7 +65,7 @@ const MobileNav = ({ side }: MobileNavProp) => {
               onClick={() => setIsOpen(!isOpen)}
             >
               {isSignedIn ? <FaSignOutAlt /> : <FaSignInAlt />}
-              <SignIn className="w-full flex justify-start" />
+              <SignIn className="w-full flex justify-start" el="button" />
             </li>
             <li
               className="flex justify-center items-center gap-2 p-2 focus-within:black-shadow focus:no-shadow"
