@@ -9,8 +9,8 @@
   .white-shadow {
     box-shadow: 2px 2px 8px whitesmoke;
   }
-  .gray-shadow {
-    box-shadow: 2px 2px 8px #505050;
+  .no-shadow {
+    box-shadow: none;
   }
   .black-shadow {
     box-shadow: 2px 2px 8px black;

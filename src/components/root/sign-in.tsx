@@ -8,7 +8,12 @@ import {
 } from "@clerk/nextjs";
 import { FaSpinner } from "react-icons/fa";
 
-const SignIn = ({className}: {className:string}) => {
+type SignInTypes = {
+  className: string;
+  el?: keyof JSX.IntrinsicElements;
+};
+
+const SignIn = ({ className, el: Wrapper = "button" }: SignInTypes) => {
   const { isLoaded } = useUser();
 
   if (!isLoaded) {
@@ -26,12 +31,12 @@ const SignIn = ({className}: {className:string}) => {
           fallbackRedirectUrl={"/"}
           forceRedirectUrl={"/dashboard"}
         >
-          <button className={className}>Sign in</button>
+          <Wrapper className={className}>Sign in</Wrapper>
         </SignInButton>
       </SignedOut>
       <SignedIn>
         <SignOutButton redirectUrl="/">
-          <button className={className}>Sign out</button>
+          <Wrapper className={className}>Sign out</Wrapper>
         </SignOutButton>
       </SignedIn>
     </>
