@@ -37,7 +37,7 @@ const MobileNav = ({ side }: MobileNavProp) => {
           </Link>
           <FaX
             onClick={() => setIsOpen(!isOpen)}
-            className="hover:text-red-500 transition-colors cursor-pointer"
+            className="cursor-pointer hover:text-red-500"
           />
         </div>
         <div className="menu">
