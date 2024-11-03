@@ -1,14 +1,15 @@
 "use client";
 import { SignUpButton, useUser } from "@clerk/nextjs";
-import {
-
-  SignedIn,
-  SignedOut,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 import { FaSpinner } from "react-icons/fa";
 
-export const SignUp = ({className}: {className:string}) => {
+type SignUpProps = {
+  el?: keyof JSX.IntrinsicElements;
+  className: string;
+};
+
+export const SignUp = ({ className, el: Wrapper = "button" }: SignUpProps) => {
   const { isLoaded } = useUser();
 
   if (!isLoaded) {
@@ -26,7 +27,7 @@ export const SignUp = ({className}: {className:string}) => {
           fallbackRedirectUrl={"/"}
           forceRedirectUrl={"/dashboard"}
         >
-          <button className={className}>Create account</button>
+          <Wrapper className={className}>Create account</Wrapper>
         </SignUpButton>
       </SignedOut>
       <SignedIn>

@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import imgURL from "../../public/inferno-sign.png";
-
-const img =
-  "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fvectors%2Flogo-design&psig=AOvVaw3BifLepnc2WXtMgrA-S8ue&ust=1730349045587000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjhtNOitYkDFQAAAAAdAAAAABAI";
-
 import "./globals.css";
 import ContextProvider from "@/components/context-provider";
 

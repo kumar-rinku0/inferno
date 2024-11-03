@@ -31,19 +31,19 @@ const MobileNav = ({ side }: MobileNavProp) => {
           isOpen ? `right-0 black-shadow dark:white-shadow` : `-right-64`
         } side-bar h-[100vh] w-64 fixed top-0 bg-accent dark:bg-primary transition-all duration-200 ease-linear`}
       >
-        <div className="logo flex justify-between items-center px-5 py-5 black-shadow dark:white-shadow">
+        <div className="logo flex justify-between items-center h-16 px-5 py-5 black-shadow dark:white-shadow">
           <Link href={"/"} className="text-lg">
             inferno
           </Link>
           <FaX
             onClick={() => setIsOpen(!isOpen)}
-            className="hover:text-red-500 transition-colors cursor-pointer"
+            className="cursor-pointer hover:text-red-500"
           />
         </div>
         <div className="menu">
           <ul className="flex flex-col justify-start gap-4 py-4">
             <li
-              className="flex justify-start items-center gap-2 p-2 hover:gray-shadow"
+              className="flex justify-start items-center gap-2 p-2 focus-within:black-shadow focus:no-shadow"
               onClick={() => setIsOpen(!isOpen)}
             >
               <FaDashcube />
@@ -52,7 +52,7 @@ const MobileNav = ({ side }: MobileNavProp) => {
               </Link>
             </li>
             <li
-              className="flex justify-start items-center gap-2 p-2 hover:gray-shadow"
+              className="flex justify-start items-center gap-2 p-2 focus-within:black-shadow focus:no-shadow"
               onClick={() => setIsOpen(!isOpen)}
             >
               <FaBell />
@@ -61,14 +61,14 @@ const MobileNav = ({ side }: MobileNavProp) => {
               </Link>
             </li>
             <li
-              className="flex justify-center items-center gap-2 p-2 hover:gray-shadow"
+              className="flex justify-center items-center gap-2 p-2 focus-within:black-shadow focus:no-shadow"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isSignedIn ? <FaSignOutAlt /> : <FaSignInAlt />}
-              <SignIn className="w-full flex justify-start" />
+              <SignIn className="w-full flex justify-start" el="button" />
             </li>
             <li
-              className="flex justify-center items-center gap-2 p-2 hover:gray-shadow"
+              className="flex justify-center items-center gap-2 p-2 focus-within:black-shadow focus:no-shadow"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isSignedIn ? <FaUser /> : <FaSignOutAlt />}
