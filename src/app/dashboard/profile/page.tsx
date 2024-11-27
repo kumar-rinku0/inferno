@@ -1,12 +1,15 @@
+import { auth } from "@clerk/nextjs/server";
 
-import { UserProfile } from "@clerk/nextjs"
+const Profile = async () => {
+  const { has } = await auth();
+  // Check if the user is authorized
+  const canAccessSettings = has({ permission: "org:sys_profile:manage" });
 
-const Profile = () => {
-  return (
-    <div>
-      Profile
-    </div>
-  )
-}
+  // If has() returns false, the user does not have the correct permissions
+  // You can choose how your app responds. This example returns null.
+  if (!canAccessSettings) return <div>NO acccess!</div>;
 
-export default Profile
+  return <div>Profile</div>;
+};
+
+export default Profile;
