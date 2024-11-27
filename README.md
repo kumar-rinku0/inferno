@@ -1,14 +1,15 @@
 ### [inferno](https://infer-no.vercel.app) _> [🚀](https://infer-no.vercel.app)
-...
+
+#### ... visit my other backend RBAC application [luminous](https://luminous-beta.vercel.app)
 
 #### Running Locally
 
 ##### First, clone repo.
 ```bash
 
-git clone https://github.com/kumar-rinku0/rinku-portfolio.git
+git clone https://github.com/kumar-rinku0/inferno.git
 
-cd rinku-portfolio
+cd inferno
 
 ```
 
@@ -25,7 +26,20 @@ npm run dev
 ##### Open [localhost:3000](http://localhost:3000) in your browser to see the result.
 
 
-#### Database
+#### for clerk auth.
 
-##### Create a ``` .env ``` or ``` .env.local ``` file to declare an Environment Variable.
+##### Create a ``` .env ``` or ``` .env.local ``` file to declare Environment Variable.
 
+```bash
+
+1 - NEXT_PUBLIC_CLERK_SIGN_IN_URL = "/login"
+
+2 - NEXT_PUBLIC_CLERK_SIGN_UP_URL = "/register"
+
+3 - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = "create a key!"
+
+4 - CLERK_SECRET_KEY = "create own secret!"
+
+```
+
+##### Don't forget to turn on RBAC System on, through clerk!
