@@ -1,10 +1,10 @@
 ### [inferno](https://infer-no.vercel.app) _> [🚀](https://infer-no.vercel.app)
 
-#### ... visit my other backend RBAC application [luminous](https://luminous-beta.vercel.app)
+#### ... visit my other sentinel listing application [luminous](https://luminous-hub.vercel.app)
 
-#### Running Locally
+#### Running Application Locally
 
-##### First, clone repo.
+##### First, clone this repo.
 ```bash
 
 git clone https://github.com/kumar-rinku0/inferno.git
